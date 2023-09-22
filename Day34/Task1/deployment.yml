@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: day23-task1
+  name: day24-task-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: day24-task-1
+  template:
+    metadata:
+      labels:
+        app: day24-task-1
+    spec:  # This should be indented one level further
+      containers:
+      - name: day24-task-1
+        image: 'abhiraj2001/node-todo-app-cicd:v1'
+        ports:
+        - containerPort: 8000
+
